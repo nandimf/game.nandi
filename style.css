@@ -1,0 +1,253 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  padding: 2.5px;
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+}
+
+#container{
+  z-index: 10;
+  width: 350px;
+  height: 502px;
+  overflow: hidden;
+  background-image: linear-gradient(#41BAEC 80%,  #FF8A29 20%);
+  border: 1px solid black;
+}
+
+#container::after{
+  content: "";
+  z-index: 0;
+  display: block;
+  width: 348.9px;
+  height: 10px;
+  position: absolute;
+  top: 400px;
+  background-color: #00B300;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.btnStart, .choiceCube{
+  z-index: 9;
+  display: block;
+  margin: 0px 0px 15px 0px;
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  text-align: center;
+  position: relative;
+  top: 200px;
+  left: 125px;
+  border: 1px solid black;
+  box-shadow: 2.5px 2.5px 2.5px gray;
+}
+
+.btnStart{
+  color: white;
+  background-image: linear-gradient(lightseagreen 100%, white 0%);
+ /* animation: aniBtnStart 1s ease-in infinite; */
+}
+
+.choiceCube{
+  color: white;
+  background-image: linear-gradient(gold 100%, white 0%)
+/*  animation: aniBtnChoiceCube 1s ease-in infinite; */
+}
+
+@keyframes aniBtnStart{
+  from{ transform: translateX(0px); }
+  to{  transform: translateX(-250px);  }
+}
+
+@keyframes aniBtnChoiceCube{
+  from{ transform: translateX(0px); }
+  to{ transform: translateX(250px); }
+}
+
+.sky{
+  z-index: 1;
+  display: inline-block;
+  width: 80px;
+  height: 25px;
+  position: absolute;
+  top: 50px;
+  left: 270px;
+  background-color: white;
+}
+
+.sky::before{
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  left: 25px;
+  background-color: white;
+}
+
+.skyTwo {
+  z-index: 1;
+  display: inline-block;
+  width: 80px;
+  height: 25px;
+  position: absolute;
+  top: 250px;
+  left: 10px;
+  background-color: white;
+}
+
+.skyTwo::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  left: 25px;
+  background-color: white;
+}
+
+.cScore{
+  z-index: 11;
+  display: inline-block;
+  width: 90px;
+  height: 50px;
+  overflow: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 50px;
+  position: absolute;
+  top: 10px;
+  left: 176px;
+/*  border: 1px solid black; */
+}
+
+.block{   /* .block === top position, defaultnya = -231px; */
+  z-index: 8;
+  width: 50px;
+  height: 385px;
+  position: relative;
+  top: -190px; /*Semakin hight counternya === makin ke atas block nya */      
+  left: 350px;
+  border: 1px solid black;
+  background-color: #12C16C;
+  animation: animBlock 4s linear infinite;
+}
+
+.block::after{
+  content: "";
+  z-index: 8;
+  display: block;
+  width: 50px;
+  height: 462px;
+  position: relative;
+  top: 490px;
+  border: 1px solid black;
+  background-color: #12C16C;
+}
+
+@keyframes animBlock{
+  from{ left: 350px; }
+  to{ left: -50px; }
+}
+
+.eCubePsdueE::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  position: relative;
+  top: -3px;
+  left: 16px;
+  background-color: white;
+}
+
+.cAlertt{
+  z-index: 12;
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  line-height: 150px;
+  position: absolute;
+  top: 176px;
+  left: 50px;
+  background-color: white;
+  border-radius: 1%;
+  border: 1px solid black;
+}
+
+.cEConfirm{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: black;
+  font-size: 10px;
+  text-align: center;
+  line-height: 18px;
+  position: absolute;
+  top: 125px;
+  left: 225px;
+  background-color: gold;
+  border-radius: 10%;
+  border: 1px solid black;
+}
+
+.boxChoiceCube{
+  z-index: 12;
+  display: inline-block;
+  width: 250px;
+  height: 0px;
+  position: absolute;
+  top: 280px;
+  left: 55px;
+  border-radius: 1%;
+  transition: 1s ease;
+}
+
+.cBoxChoiceCube{
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 110px;
+  position: absolute;
+  top: 280px;
+  left: 55px;
+  background-color: white;
+  border-radius: 1%;
+  border: 1px solid black;
+}
+
+.cubeOne, .cubeTwo, .cubeTree{
+  margin: 0px 5px 0px 5px;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 5%;
+}
+
+.cubeOne{
+  background-color: gold;
+  border: 3px solid red;
+}
+
+.cubeTwo{
+  background-color: skyblue;
+}
+
+.cubeTree{
+  background-color: salmon;
+}
